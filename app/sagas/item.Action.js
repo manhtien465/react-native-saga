@@ -5,30 +5,20 @@ import { loadingCart } from "../crud/auth.crud";
 import { itemActionTypes } from '../constant/index';
 import { authActions } from '../store/ducks/authReducer';
 function* featchItem({ payload }) {
-    let { page, limit, sortBy, order } = payload
-    console.log(page, limit);
+    const { page, sortBy, shopId, name } = payload
+    console.log(page);
     try {
-        if (!page) {
-            page = 1;
-            yield put(itemActions.resetItem())
-        } if (!limit) {
-            limit = 1;
-        }
-        if (!sortBy) {
-            sortBy = "_id"
-
-        }
-        if (!order) {
-            order = "ASC"
-        }
-        if (page === 1) {
-            yield put(itemActions.resetItem())
-        }
-        console.log("action>", sortBy);
-        const result = yield call(getdata, { limit, page, sortBy, order })
-        yield put(itemActions.loadingsuccess(result.data))
+        let url = "";
+        let null1 = true;
+        !page ? url = "?page=1" : url = `?page=${page}`
+        sortBy ? url = url + `&sort=${sortBy}` : url = url + `&sort=_id`
+        // order ? url = url + `&order=${order}` : url = url + `&order=_ASC`
+        // let shopId = getStorage("shopId")
+        // shopId ? url = url + `&shopId=${shopId}` : null1 = true
+        // name ? url = url + `&name${name}` : null1 = true
+        const result = yield call(getdata, { url })
+        yield put(itemActions.loadingsuccess(result.data.data))
     } catch (err) {
-
         const error = err.response ? err.response.data.msg : err.stack;
         yield put(itemActions.error(error));
     }

@@ -17,7 +17,7 @@ export const rootReducer = combineReducers({
   itemReducer: itemReducer,
   // totalReducer: totalReducer,
 
-  // layoutReducer:layoutReducer
+  layoutReducer: layoutReducer
 
 });
 export function* rootSaga() {

@@ -5,7 +5,10 @@ const { width } = Dimensions.get("window")
 let height = width * 0.35
 const Banner = () => {
   return (
-    <View>
+    <View style={{
+      marginTop: 20,
+      marginBottom: 10
+    }}>
       <Image source={banner} style={{ height, width, resizeMode: "cover" }}></Image>
 
     </View>

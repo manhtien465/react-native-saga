@@ -36,7 +36,7 @@ export const itemReducer =
                 }
             case itemActionTypes.loadingItemSuccess:
                 return {
-                    ...state, isPending: !state.isPending, item: state.item.concat(action.payload)
+                    ...state, isPending: !state.isPending, item: action.payload
                 }
             case itemActionTypes.uploadItem:
                 return {

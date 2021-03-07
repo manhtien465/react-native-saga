@@ -29,9 +29,9 @@ const Katagana = () => {
 }
 
 const Modelbox = ({ navigation }) => {
-  const { width } = useDimensions();
-  console.log(useDeviceOrientation());
-  console.log(useDimensions());
+  // const { width } = useDimensions();
+  // console.log(useDeviceOrientation());
+  // console.log(useDimensions());
   const ref = useRef()
 
   return (

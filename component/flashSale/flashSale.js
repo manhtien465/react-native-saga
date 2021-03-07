@@ -24,7 +24,8 @@ const FlashSale = () => {
         scrollEventThrottle={0}
         pagingEnabled
         showsHorizontalScrollIndicator={true}
-        style={{ height, width }}>
+      // style={{ height, width }}
+      >
         <View style={styles.item}>
           <View style={styles.item__box}>
             <Image style={styles.item__box__image} source={item} />
@@ -58,8 +59,9 @@ const FlashSale = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 10,
+    marginBottom: 10,
     borderColor: "#c2bbb6",
-    borderWidth: 1
+    borderTopWidth: 1
   },
   header: {
     flexDirection: "row",

@@ -3,7 +3,7 @@ import { View, Text, ScrollView, Dimensions, StyleSheet, Image } from 'react-nat
 import item from "../../assets/item.jpg"
 import { AntDesign } from '@expo/vector-icons';
 const { width } = Dimensions.get("window")
-let height = width * 0.6
+let height = width * 0.5
 const TopSearch = () => {
   return (
     <View style={styles.container}>
@@ -56,8 +56,8 @@ const TopSearch = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 10,
-    // borderColor: "#c2bbb6",
-    // borderWidth: 1
+    borderColor: "#c2bbb6",
+    borderTopWidth: 1
   },
   header: {
     flexDirection: "row",

@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, Dimensions } from "react-native"
 const { width } = Dimensions.get("window")
 let height = width * 0.6
 const CarouselItem = (props) => {
-  console.log(props.item);
+
   return (
 
     <Image

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TextInput, TouchableHighlight } from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
-const Header = () => {
+const Header = (props) => {
   const [search, setSearch] = useState("")
   return (
     <View style={styles.main}>
@@ -15,7 +15,9 @@ const Header = () => {
           placeholder="search in here" />
       </View>
       <View style={styles.icon}>
-        <AntDesign style={styles.cart} name="shoppingcart" size={24} color="#eb7434" />
+
+        <AntDesign style={styles.cart} name="shoppingcart" size={24} color="#eb7434" onPress={() => props.navigation.navigate("cart")} />
+
         <AntDesign style={styles.message} name="message1" size={24} color="#eb7434" />
       </View>
     </View>
